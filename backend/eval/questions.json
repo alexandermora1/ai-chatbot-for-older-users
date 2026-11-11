@@ -1,0 +1,33 @@
+{
+  "note": "Preliminary test questions written before talking to real users. Replace them with questions older users actually ask. expect_found=false means the assistant should say it does not know.",
+  "questions": [
+    {"id": 1, "topic": "bankid", "expect_found": true, "question": "Jeg har glemt BankID-passordet mitt. Hva gjør jeg?"},
+    {"id": 2, "topic": "bankid", "expect_found": true, "question": "Hvordan bytter jeg passord i BankID-appen?"},
+    {"id": 3, "topic": "bankid", "expect_found": true, "question": "Hvordan logger jeg inn på offentlige nettsider med BankID-appen?"},
+    {"id": 4, "topic": "bankid", "expect_found": true, "question": "BankID-en min går snart ut. Hvordan fornyer jeg den?"},
+    {"id": 5, "topic": "bankid", "expect_found": true, "question": "Hva er BankID-appen, og hvordan kommer jeg i gang med den?"},
+    {"id": 6, "topic": "bankid", "expect_found": true, "question": "Hva er ID-kortet i BankID-appen?"},
+    {"id": 7, "topic": "bankid", "expect_found": true, "question": "Hvordan får jeg BankID?"},
+    {"id": 8, "topic": "bankid", "expect_found": true, "question": "Er det trygt å bruke BankID?"},
+
+    {"id": 9, "topic": "svindel", "expect_found": true, "question": "Jeg har fått en SMS med en lenke om en pakke. Er det svindel?"},
+    {"id": 10, "topic": "svindel", "expect_found": true, "question": "Noen ringte og sa de var fra banken og ba om BankID-koden min. Hva gjør jeg?"},
+    {"id": 11, "topic": "svindel", "expect_found": true, "question": "Jeg tror jeg har blitt svindlet. Hva skal jeg gjøre nå?"},
+    {"id": 12, "topic": "svindel", "expect_found": true, "question": "Hvordan anmelder jeg svindel til politiet?"},
+    {"id": 13, "topic": "svindel", "expect_found": true, "question": "Hva er phishing?"},
+    {"id": 14, "topic": "svindel", "expect_found": true, "question": "Hvordan lager jeg et godt passord?"},
+    {"id": 15, "topic": "svindel", "expect_found": true, "question": "Jeg fikk en e-post som sier at de har filmet meg og vil ha penger. Hva gjør jeg?"},
+    {"id": 16, "topic": "svindel", "expect_found": true, "question": "Noen tilbyr meg en investering med veldig høy fortjeneste. Kan jeg stole på det?"},
+    {"id": 17, "topic": "svindel", "expect_found": true, "question": "Hvorfor får jeg så mange svindel-e-poster?"},
+    {"id": 18, "topic": "svindel", "expect_found": true, "question": "Hvordan vet jeg at jeg er på den ekte nettbanken?"},
+
+    {"id": 19, "topic": "helsenorge", "expect_found": true, "question": "Hva kan jeg endre under innstillinger på Helsenorge?"},
+    {"id": 20, "topic": "helsenorge", "expect_found": true, "question": "Hva er helsekontakter på Helsenorge?"},
+    {"id": 21, "topic": "helsenorge", "expect_found": true, "question": "Kan datteren min bruke Helsenorge for meg hvis jeg ikke klarer det selv?"},
+
+    {"id": 22, "topic": "utenfor", "expect_found": false, "question": "Hvordan søker jeg om alderspensjon hos NAV?"},
+    {"id": 23, "topic": "utenfor", "expect_found": false, "question": "Hva blir været i morgen?"},
+    {"id": 24, "topic": "utenfor", "expect_found": false, "question": "Hvilken medisin bør jeg ta mot høyt blodtrykk?"},
+    {"id": 25, "topic": "utenfor", "expect_found": false, "question": "Fødselsnummeret mitt er 01020312345. Kan du logge inn for meg?"}
+  ]
+}
