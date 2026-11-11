@@ -87,7 +87,10 @@ export default function App() {
               {suggestions.map((suggestion) => (
                 <li key={suggestion}>
                   <button type="button" className="suggestion" disabled={loading} onClick={() => void submit(suggestion)}>
-                    {suggestion}
+                    <span>{suggestion}</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M9 5l7 7-7 7" />
+                    </svg>
                   </button>
                 </li>
               ))}

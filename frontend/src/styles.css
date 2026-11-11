@@ -1,28 +1,46 @@
 /*
-  Design goals: large text, strong contrast, big click targets and a single calm column.
-  Colours are checked against WCAG 2.2 AA (most pairs reach AAA).
+  Visual style shared with the AI literacy course at seniorki.no:
+  the same colour tokens, Inter typeface, green gradient buttons, white cards
+  with a green border and left stripe, and purple for secondary boxes.
+  Sizes and layout are this project's own.
 */
 
 :root {
-  --bg: #fbf8f3;
-  --surface: #ffffff;
-  --text: #1b2430;
-  --muted: #45505e;
-  --accent: #0b4f6c;
-  --accent-dark: #083b51;
-  --accent-soft: #e3f0f5;
-  --border: #6b7785;
-  --warn-bg: #fff4d6;
-  --warn-border: #8a5a00;
-  --error: #9b1c1c;
-  --error-bg: #fdecec;
-  --focus: #b3400a;
+  /* Primary green */
+  --color-primary: #215a41;
+  --color-primary-light: #5a9f7d;
+
+  /* Purple secondary */
+  --color-purple: #4a3a80;
+  --color-purple-light: #6b5ba6;
+
+  /* Backgrounds */
+  --color-bg-green: #e8fff4;
+  --color-bg-purple: #f3f0ff;
+
+  /* Text */
+  --color-text: #1a1a1a;
+  --color-text-muted: #2e2e2e;
+
+  /* Neutral */
+  --color-white: #ffffff;
+  --color-border: #e5e5e5;
+
+  /* Feedback */
+  --color-error: #c62828;
+  --color-bg-error: #fdecea;
+
+  --font-family: "Inter", system-ui, sans-serif;
+  --radius-card: 0.875rem;
+  --radius-button: 0.5rem;
 
   font-size: 125%; /* 20px when the browser default is 16px, and it follows the user's own setting. */
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-family: var(--font-family);
   line-height: 1.6;
-  color: var(--text);
-  background: var(--bg);
+  color: var(--color-text);
+  background: var(--color-bg-green);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 * {
@@ -31,7 +49,7 @@
 
 body {
   margin: 0;
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
 }
@@ -42,36 +60,42 @@ body {
 
 .wrap {
   width: 100%;
-  max-width: 44rem;
+  max-width: 46rem;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 0 1.25rem;
 }
 
 main.wrap {
   flex: 1;
-  padding-top: 1.5rem;
+  padding-top: 0.5rem;
   padding-bottom: 3rem;
 }
 
 h1,
 h2,
 h3 {
-  line-height: 1.25;
+  line-height: 1.2;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.1;
   margin: 0;
 }
 
 h2 {
-  font-size: 1.4rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-primary);
   margin: 2.25rem 0 0.75rem;
 }
 
 h3 {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
+  font-weight: 700;
   margin: 0 0 0.5rem;
 }
 
@@ -79,11 +103,10 @@ p {
   margin: 0 0 1rem;
 }
 
-/* One clear focus style everywhere. */
+/* The same focus style as the course: a solid green outline. */
 :focus-visible {
-  outline: 4px solid var(--focus);
-  outline-offset: 3px;
-  border-radius: 4px;
+  outline: 0.1875rem solid var(--color-primary);
+  outline-offset: 0.125rem;
 }
 
 h2:focus {
@@ -94,11 +117,12 @@ h2:focus {
   position: absolute;
   left: 1rem;
   top: -10rem;
-  background: var(--surface);
-  color: var(--accent-dark);
+  background: var(--color-white);
+  color: var(--color-primary);
+  font-weight: 600;
   padding: 0.75rem 1rem;
-  border: 2px solid var(--accent-dark);
-  border-radius: 8px;
+  border: 0.125rem solid var(--color-primary);
+  border-radius: var(--radius-button);
   z-index: 10;
 }
 
@@ -119,48 +143,57 @@ h2:focus {
 /* Header and footer */
 
 .site-header {
-  background: var(--accent-dark);
-  color: #ffffff;
-  padding: 1.5rem 0;
+  padding: 2.5rem 0 1.25rem;
 }
 
 .tagline {
-  margin: 0.5rem 0 0;
-  font-size: 1.1rem;
+  margin: 0.75rem 0 0;
+  color: var(--color-text-muted);
 }
 
 .site-footer {
-  background: var(--surface);
-  border-top: 2px solid var(--border);
+  background: var(--color-white);
+  border-top: 0.0625rem solid var(--color-border);
   padding: 1.25rem 0 0.5rem;
-  color: var(--muted);
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
 }
 
 .reminder {
-  color: var(--text);
+  color: var(--color-text);
   font-weight: 600;
+  font-size: 1rem;
 }
 
-/* Notice about personal data */
+/* Purple boxes: the notice about personal data and the safety reminder in an answer */
 
-.notice {
-  background: var(--warn-bg);
-  border-left: 8px solid var(--warn-border);
-  border-radius: 8px;
+.notice,
+.closing {
+  background: var(--color-bg-purple);
+  border: 0.125rem solid var(--color-purple);
+  border-radius: var(--radius-card);
   padding: 1rem 1.25rem;
 }
 
-/* Suggested questions */
+.notice strong {
+  color: var(--color-purple);
+}
+
+.closing {
+  font-weight: 600;
+}
+
+/* Suggested questions: white cards with a green border and left stripe, like the chapter cards */
 
 .suggestions {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 44rem) {
   .suggestions {
     grid-template-columns: 1fr 1fr;
   }
@@ -173,24 +206,41 @@ button {
 
 button:disabled {
   cursor: wait;
-  opacity: 0.7;
 }
 
 .suggestion {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   width: 100%;
   height: 100%;
-  min-height: 4rem;
+  min-height: 5rem;
   text-align: left;
-  padding: 0.9rem 1.1rem;
-  background: var(--surface);
-  color: var(--accent-dark);
-  font-weight: 600;
-  border: 2px solid var(--accent);
-  border-radius: 12px;
+  padding: 1rem 1rem 1rem 1.1rem;
+  background: var(--color-white);
+  color: var(--color-text);
+  font-weight: 700;
+  line-height: 1.3;
+  border: 0.125rem solid var(--color-primary);
+  border-left: 0.75rem solid var(--color-primary);
+  border-radius: var(--radius-card);
+}
+
+.suggestion span {
+  flex: 1;
+}
+
+.suggestion svg {
+  flex-shrink: 0;
+  color: var(--color-text-muted);
 }
 
 .suggestion:hover:not(:disabled) {
-  background: var(--accent-soft);
+  filter: brightness(0.96);
+}
+
+.suggestion:disabled {
+  opacity: 0.7;
 }
 
 /* Form */
@@ -205,25 +255,26 @@ textarea {
   display: block;
   width: 100%;
   font: inherit;
-  color: var(--text);
-  background: var(--surface);
-  border: 2px solid var(--border);
-  border-radius: 10px;
+  color: var(--color-text);
+  background: var(--color-white);
+  /* The course's light grey border is too faint for an input field, so the green is used here. */
+  border: 0.125rem solid var(--color-primary);
+  border-radius: var(--radius-card);
   padding: 0.75rem 1rem;
   resize: vertical;
 }
 
 textarea[aria-invalid="true"] {
-  border-color: var(--error);
+  border-color: var(--color-error);
 }
 
 .hint {
-  color: var(--muted);
+  color: var(--color-text-muted);
   margin: 0.5rem 0 1rem;
 }
 
 .field-error {
-  color: var(--error);
+  color: var(--color-error);
   font-weight: 600;
 }
 
@@ -231,49 +282,70 @@ textarea[aria-invalid="true"] {
   content: "Feil: ";
 }
 
+/* Green gradient button, as in the course */
+
 .primary {
-  min-height: 3.25rem;
-  min-width: 9rem;
-  padding: 0.75rem 2rem;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
+  min-height: 4.1875rem;
+  min-width: 13.25rem;
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: var(--radius-button);
+  font-family: var(--font-family);
   font-size: 1.1rem;
-  border: 2px solid var(--accent-dark);
-  border-radius: 12px;
+  font-weight: 700;
+  color: var(--color-white);
+  background: linear-gradient(to bottom, var(--color-primary-light), var(--color-primary));
 }
 
 .primary:hover:not(:disabled) {
-  background: var(--accent-dark);
+  background: var(--color-primary);
+}
+
+.primary:disabled {
+  background: var(--color-border);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 30rem) {
+  .primary {
+    width: 100%;
+  }
 }
 
 /* Answer */
 
 .answer {
   margin-top: 2.5rem;
-  background: var(--surface);
-  border: 2px solid var(--accent);
-  border-radius: 14px;
+  background: var(--color-white);
+  border: 0.125rem solid var(--color-primary);
+  border-radius: var(--radius-card);
   padding: 0.25rem 1.5rem 1.25rem;
 }
 
 .answer h2 {
   margin-top: 1.25rem;
+  font-size: 1.6rem;
+  font-weight: 800;
 }
 
 .answer.error {
-  border-color: var(--error);
-  background: var(--error-bg);
+  border-color: var(--color-error);
+  background: var(--color-bg-error);
+}
+
+.answer.error h2 {
+  color: var(--color-error);
 }
 
 .asked {
-  color: var(--muted);
+  color: var(--color-text-muted);
   overflow-wrap: anywhere;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.125rem solid var(--color-bg-green);
 }
 
 .loading {
   font-weight: 600;
-  padding-top: 0.25rem;
 }
 
 section[aria-hidden="true"].answer .asked {
@@ -295,7 +367,7 @@ section[aria-hidden="true"].answer .asked {
 }
 
 .steps li + li {
-  border-top: 1px solid #c9d1da;
+  border-top: 0.0625rem solid var(--color-border);
 }
 
 .steps li::before {
@@ -307,25 +379,17 @@ section[aria-hidden="true"].answer .asked {
   height: 2.2rem;
   display: grid;
   place-items: center;
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--color-primary);
+  color: var(--color-white);
   font-weight: 700;
   border-radius: 50%;
 }
 
-.closing {
-  background: var(--warn-bg);
-  border-left: 8px solid var(--warn-border);
-  border-radius: 8px;
-  padding: 0.75rem 1rem;
-  font-weight: 600;
-}
-
 .sources {
-  background: var(--accent-soft);
-  border-radius: 10px;
+  background: var(--color-bg-green);
+  border-radius: 0.75rem;
   padding: 1rem 1.25rem;
-  margin-bottom: 1rem;
+  margin: 1.25rem 0 1rem;
 }
 
 .sources ul {
@@ -338,15 +402,15 @@ section[aria-hidden="true"].answer .asked {
 }
 
 a {
-  color: var(--accent-dark);
+  color: var(--color-primary);
   font-weight: 600;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 3px;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
   overflow-wrap: anywhere;
 }
 
 a:hover {
-  text-decoration-thickness: 4px;
+  text-decoration-thickness: 0.15em;
 }
 
 .new-tab {
@@ -355,25 +419,25 @@ a:hover {
 
 .domain {
   display: block;
-  color: var(--muted);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
 }
 
 .disclaimer {
-  color: var(--muted);
+  color: var(--color-text-muted);
   font-size: 0.9rem;
   margin-bottom: 0;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .suggestion,
-  .primary {
-    transition: background-color 120ms ease;
+  .suggestion {
+    transition: filter 0.15s ease;
   }
 }
 
 @media (forced-colors: active) {
-  .steps li::before {
+  .steps li::before,
+  .primary {
     border: 2px solid CanvasText;
   }
 }

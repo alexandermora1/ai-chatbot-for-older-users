@@ -40,6 +40,7 @@ question ──> embed ──> search top chunks ──> prompt with rules ─�
 | Vector search | Local, NumPy |
 | Frontend | React, TypeScript, Vite |
 | Accessibility target | WCAG 2.2 AA |
+| Visual style | Shared with the AI literacy course at [seniorki.no](https://seniorki.no): same colours, typeface, buttons and cards |
 
 ## Getting started
 
