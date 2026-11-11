@@ -1,0 +1,40 @@
+{
+  "note": "Public guidance pages used as the knowledge base. Only pages with enabled=true are fetched. Check each site's terms before fetching, and keep the list short (20 to 40 pages).",
+  "sources": [
+    {"id": "bankid-hjelp", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp"},
+    {"id": "bankid-bruke", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp/hjelp-bruke-bankid"},
+    {"id": "bankid-offentlige-tjenester", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp/hjelp-bruke-bankid/slik-logger-du-inn-med-bankid-i-offentlige-tjenester"},
+    {"id": "bankid-fornye", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp/hjelp-bruke-bankid/slik-fornyer-du-bankid"},
+    {"id": "bankid-app", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp-bankid-app"},
+    {"id": "bankid-app-endre-passord", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp-bankid-app/slik-endrer-du-ditt-personlige-passord-i-bankid-appen"},
+    {"id": "bankid-app-id-kort", "topic": "bankid", "enabled": true, "url": "https://bankid.no/hjelp-bankid-app/hjelp-id-kort"},
+    {"id": "bankid-glemt-passord", "topic": "bankid", "enabled": true, "url": "https://bankid.no/glemt-passord"},
+    {"id": "bankid-faq-glemt-passord", "topic": "bankid", "enabled": true, "url": "https://bankid.no/faq/jeg-har-glemt-passordet-hva-gjoer-jeg"},
+    {"id": "bankid-faq-endre-passord", "topic": "bankid", "enabled": true, "url": "https://bankid.no/faq/hvordan-endrer-jeg-passord"},
+
+    {"id": "politiet-svindel", "topic": "svindel", "enabled": true, "url": "https://www.politiet.no/rad/beskytt-deg-mot-svindel-og-id-tyveri"},
+    {"id": "politiet-svindelforsok", "topic": "svindel", "enabled": true, "url": "https://www.politiet.no/rad/beskytt-deg-mot-svindel-og-id-tyveri/svindelforsok"},
+    {"id": "politiet-anmelde-svindel", "topic": "svindel", "enabled": true, "url": "https://www.politiet.no/tjenester/anmelde/anmelde-svindel-og-id-tyveri"},
+    {"id": "politiet-trygg-nettbruk", "topic": "svindel", "enabled": true, "url": "https://www.politiet.no/tryggnettbruk"},
+    {"id": "nkom-digital-svindel", "topic": "svindel", "enabled": true, "url": "https://nkom.no/telefoni-og-telefonnummer/telefonsvindel"},
+    {"id": "nkom-sms-svindel", "topic": "svindel", "enabled": true, "url": "https://nkom.no/aktuelt/slik-kan-du-avslore-sms-svindel"},
+    {"id": "nettvett-phishing", "topic": "svindel", "enabled": true, "url": "https://nettvett.no/phishing/"},
+    {"id": "nettvett-passord", "topic": "svindel", "enabled": true, "url": "https://nettvett.no/passord/"},
+    {"id": "nettvett-falske-trusler", "topic": "svindel", "enabled": true, "url": "https://nettvett.no/falske-trusler-og-utpressingskrav/"},
+    {"id": "nettvett-svindel-epost", "topic": "svindel", "enabled": true, "url": "https://nettvett.no/hvorfor-far-jeg-svindel-e-post/"},
+    {"id": "nettvett-investeringsbedrageri", "topic": "svindel", "enabled": true, "url": "https://nettvett.no/investeringsbedrageri/"},
+    {"id": "nettvett-nettbank-adresse", "topic": "svindel", "enabled": true, "url": "https://nettvett.no/skriv-inn-adressen-til-nettbanken/"},
+
+    {"id": "helsenorge-helsekontakter", "topic": "helsenorge", "enabled": true, "url": "https://www.helsenorge.no/helsekontakter/om/"},
+    {"id": "helsenorge-innstillinger", "topic": "helsenorge", "enabled": true, "url": "https://www.helsenorge.no/innstillinger/om-innstillinger/"},
+    {"id": "helsenorge-fullmakt-samtykke", "topic": "helsenorge", "enabled": true, "url": "https://www.helsenorge.no/fullmakt/om/fullmakt-pa-vegne-av-personer-med-manglende-samtykkekompetanse/"},
+    {"id": "helsenorge-parorende", "topic": "helsenorge", "enabled": true, "url": "https://www.helsenorge.no/parorende/"},
+
+    {"id": "helsenorge-en-logging-in", "topic": "helsenorge", "enabled": false, "note": "English page. Replace with the Norwegian page on the same subject.", "url": "https://www.helsenorge.no/en/privacy-statement/logging-in-to-helsenorge/"},
+    {"id": "helsenorge-en-prescriptions", "topic": "helsenorge", "enabled": false, "note": "English page. Replace with the Norwegian page on the same subject.", "url": "https://www.helsenorge.no/en/medicines/prescriptions/"},
+    {"id": "helsenorge-en-appointments", "topic": "helsenorge", "enabled": false, "note": "English page. Replace with the Norwegian page on the same subject.", "url": "https://www.helsenorge.no/en/appointments/"},
+    {"id": "helsenorge-en-change-gp", "topic": "helsenorge", "enabled": false, "note": "English page. Replace with the Norwegian page on the same subject.", "url": "https://www.helsenorge.no/en/change-doctor-gp/about/"},
+    {"id": "helsenorge-en-app", "topic": "helsenorge", "enabled": false, "note": "English page. Replace with the Norwegian page on the same subject.", "url": "https://www.helsenorge.no/en/app/"},
+    {"id": "helsenorge-en-power-of-attorney", "topic": "helsenorge", "enabled": false, "note": "English page. Replace with the Norwegian page on the same subject.", "url": "https://www.helsenorge.no/en/power-of-attorney/using-helsenorge-on-behalf-of-others/obtaining-power-of-attorney-to-use-Helsenorge-on-behalf-of-someone-else/"}
+  ]
+}

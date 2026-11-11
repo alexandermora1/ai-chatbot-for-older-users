@@ -1,0 +1,21 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Scraped content and the local index are built on your own machine and never committed
+backend/data/raw/
+backend/data/index/
+backend/eval/results*.csv
+
+# Node
+node_modules/
+dist/
+
+.DS_Store
