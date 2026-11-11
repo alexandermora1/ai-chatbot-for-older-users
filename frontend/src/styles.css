@@ -1,0 +1,379 @@
+/*
+  Design goals: large text, strong contrast, big click targets and a single calm column.
+  Colours are checked against WCAG 2.2 AA (most pairs reach AAA).
+*/
+
+:root {
+  --bg: #fbf8f3;
+  --surface: #ffffff;
+  --text: #1b2430;
+  --muted: #45505e;
+  --accent: #0b4f6c;
+  --accent-dark: #083b51;
+  --accent-soft: #e3f0f5;
+  --border: #6b7785;
+  --warn-bg: #fff4d6;
+  --warn-border: #8a5a00;
+  --error: #9b1c1c;
+  --error-bg: #fdecec;
+  --focus: #b3400a;
+
+  font-size: 125%; /* 20px when the browser default is 16px, and it follows the user's own setting. */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  display: contents;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+main.wrap {
+  flex: 1;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.4rem;
+  margin: 2.25rem 0 0.75rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0 0 0.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+/* One clear focus style everywhere. */
+:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+h2:focus {
+  outline: none;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -10rem;
+  background: var(--surface);
+  color: var(--accent-dark);
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--accent-dark);
+  border-radius: 8px;
+  z-index: 10;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Header and footer */
+
+.site-header {
+  background: var(--accent-dark);
+  color: #ffffff;
+  padding: 1.5rem 0;
+}
+
+.tagline {
+  margin: 0.5rem 0 0;
+  font-size: 1.1rem;
+}
+
+.site-footer {
+  background: var(--surface);
+  border-top: 2px solid var(--border);
+  padding: 1.25rem 0 0.5rem;
+  color: var(--muted);
+}
+
+.reminder {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Notice about personal data */
+
+.notice {
+  background: var(--warn-bg);
+  border-left: 8px solid var(--warn-border);
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+/* Suggested questions */
+
+.suggestions {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 40rem) {
+  .suggestions {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.suggestion {
+  width: 100%;
+  height: 100%;
+  min-height: 4rem;
+  text-align: left;
+  padding: 0.9rem 1.1rem;
+  background: var(--surface);
+  color: var(--accent-dark);
+  font-weight: 600;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+}
+
+.suggestion:hover:not(:disabled) {
+  background: var(--accent-soft);
+}
+
+/* Form */
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  font: inherit;
+  color: var(--text);
+  background: var(--surface);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  resize: vertical;
+}
+
+textarea[aria-invalid="true"] {
+  border-color: var(--error);
+}
+
+.hint {
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.field-error {
+  color: var(--error);
+  font-weight: 600;
+}
+
+.field-error::before {
+  content: "Feil: ";
+}
+
+.primary {
+  min-height: 3.25rem;
+  min-width: 9rem;
+  padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 2px solid var(--accent-dark);
+  border-radius: 12px;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent-dark);
+}
+
+/* Answer */
+
+.answer {
+  margin-top: 2.5rem;
+  background: var(--surface);
+  border: 2px solid var(--accent);
+  border-radius: 14px;
+  padding: 0.25rem 1.5rem 1.25rem;
+}
+
+.answer h2 {
+  margin-top: 1.25rem;
+}
+
+.answer.error {
+  border-color: var(--error);
+  background: var(--error-bg);
+}
+
+.asked {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.loading {
+  font-weight: 600;
+  padding-top: 0.25rem;
+}
+
+section[aria-hidden="true"].answer .asked {
+  margin-top: 1.25rem;
+}
+
+.steps {
+  list-style: none;
+  counter-reset: step;
+  margin: 0 0 1.25rem;
+  padding: 0;
+}
+
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0.6rem 0 0.6rem 3.25rem;
+  min-height: 3rem;
+}
+
+.steps li + li {
+  border-top: 1px solid #c9d1da;
+}
+
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0.55rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: grid;
+  place-items: center;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 50%;
+}
+
+.closing {
+  background: var(--warn-bg);
+  border-left: 8px solid var(--warn-border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+}
+
+.sources {
+  background: var(--accent-soft);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.sources ul {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.sources li {
+  padding: 0.3rem 0;
+}
+
+a {
+  color: var(--accent-dark);
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  text-decoration-thickness: 4px;
+}
+
+.new-tab {
+  font-weight: 400;
+}
+
+.domain {
+  display: block;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.disclaimer {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .suggestion,
+  .primary {
+    transition: background-color 120ms ease;
+  }
+}
+
+@media (forced-colors: active) {
+  .steps li::before {
+    border: 2px solid CanvasText;
+  }
+}
